@@ -1,0 +1,21 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "module": "CommonJS",
+    "baseUrl": "./",
+    "target": "ES6",
+    "sourceMap": true,
+    "declaration": true,
+    "downlevelIteration": true,
+    "removeComments": true,
+    "noEmitOnError": true,
+    "experimentalDecorators": true,
+    "outDir": "./dist",
+    "lib": ["es2015"],
+    "moduleResolution": "Node",
+    "emitDecoratorMetadata": true,
+    "esModuleInterop": true,
+    "typeRoots": ["node_modules/@types"]
+  },
+  "include": ["src/**/*"]
+}

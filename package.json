@@ -1,0 +1,32 @@
+{
+  "name": "simple-di",
+  "version": "1.0.0",
+  "description": "Simple dependency injection for NodeJs based applications",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "lint": "tslint --fix -c tslint.json src/**/*.ts",
+    "build": "npm run clean-dist && tsc",
+    "clean-dist": "rimraf dist/*"
+  },
+  "dependencies": {
+    "reflect-metadata": "~0.1.13"
+  },
+  "devDependencies": {
+    "@types/node": "~12.12.21",
+    "ts-node": "~8.5.4",
+    "tslint": "~5.20.1",
+    "typescript": "~3.5.0",
+    "rimraf": "~3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndrewFahmy/simple-di.git"
+  },
+  "author": "Andrew M. Fahmy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndrewFahmy/simple-di/issues"
+  },
+  "homepage": "https://github.com/AndrewFahmy/simple-di#readme"
+}
