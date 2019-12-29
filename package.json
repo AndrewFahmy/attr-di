@@ -1,7 +1,7 @@
 {
-  "name": "simple-di",
+  "name": "attr-di",
   "version": "1.0.0",
-  "description": "Simple dependency injection for NodeJs based applications",
+  "description": "Simple dependency injection using attributes for TypeScript applications",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -21,12 +21,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AndrewFahmy/simple-di.git"
+    "url": "git+https://github.com/AndrewFahmy/attr-di.git"
   },
   "author": "Andrew M. Fahmy",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/AndrewFahmy/simple-di/issues"
+    "url": "https://github.com/AndrewFahmy/attr-di/issues"
   },
-  "homepage": "https://github.com/AndrewFahmy/simple-di#readme"
+  "homepage": "https://github.com/AndrewFahmy/attr-di#readme"
 }

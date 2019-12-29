@@ -6,7 +6,7 @@ import { IType } from './itype.interface';
 
 export class InjectorService extends Map implements IDisposable {
 
-    public resolve<T>(target: IType<any>): T {
+    public resolve<T>(target: IType<any>): T | any {
         const tokens = Reflect.getMetadata('design:paramtypes', target) || [];
 
         const injectionType = Reflect.getMetadata('design:injectiontype', target) || InjectionTypes.Transient;
