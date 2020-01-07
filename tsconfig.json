@@ -10,7 +10,7 @@
     "removeComments": true,
     "noEmitOnError": true,
     "experimentalDecorators": true,
-    "outDir": "./dist",
+    "outDir": "./lib",
     "lib": ["es2015"],
     "moduleResolution": "Node",
     "emitDecoratorMetadata": true,

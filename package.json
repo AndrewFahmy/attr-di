@@ -1,13 +1,14 @@
 {
   "name": "attr-di",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Simple dependency injection using attributes for TypeScript applications",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": ["lib/**/*"],
   "scripts": {
     "lint": "tslint --fix -c tslint.json src/**/*.ts",
     "build": "npm run clean-dist && tsc",
-    "clean-dist": "rimraf dist/*"
+    "clean-dist": "rimraf lib/*"
   },
   "dependencies": {
     "reflect-metadata": "~0.1.13"
