@@ -1,1 +1,1 @@
-export type IType<T> = new(...args: any[]) => T;
+export type IType = new<T>(...args: any[]) => any;

@@ -6,13 +6,13 @@ import { IType } from './itype.interface';
 
 export class InjectorService extends Map implements IDisposable {
 
-    public resolve<T>(target: IType<any>): T | any {
+    public resolve<T>(target: IType): any {
         const tokens = Reflect.getMetadata('design:paramtypes', target) || [];
 
         const injectionType = Reflect.getMetadata('design:injectiontype', target) || InjectionTypes.Transient;
 
-        const parameters = tokens.map((parameter: IType<any>) => {
-            return this.resolve(parameter);
+        const parameters = tokens.map((parameter: IType) => {
+            return this.resolve<T>(parameter);
         });
 
         if (injectionType === InjectionTypes.Singleton) {
@@ -21,7 +21,7 @@ export class InjectorService extends Map implements IDisposable {
             if (oldInstance) { return oldInstance; }
         }
 
-        const newClassInstance = new target(...parameters);
+        const newClassInstance = new target<T>(...parameters);
 
         if (injectionType === InjectionTypes.Singleton) {
             this.set(target, newClassInstance);
