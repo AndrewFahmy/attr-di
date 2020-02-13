@@ -56,9 +56,9 @@ export class Component{
 ```typescript
 import { injectorInstance } from 'attr-di';
 
-const component = injectorInstance.resolve<Component>(Component);
+const component = injectorInstance.resolve<Model>(Component);
 ```
 
-The first declaration of **Service1** is in the generic form, this part is **Optional** and it's used to define the return type `T`, otherwise it'll return the `any` type.
+The Generic declaration of this function is used to pass type parameters to a generic type when initializing a new version. Currently th method supports only one generic type.
 
-As for the second declaration this is not an optional parameter, this is the type declaration that will be used to read it's constructor information.
+The parameter passed to this method is th class type that you want to initialize.
