@@ -1,6 +1,6 @@
 {
   "name": "attr-di",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "description": "Simple dependency injection using attributes for TypeScript applications",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -18,10 +18,10 @@
   },
   "devDependencies": {
     "@types/node": "~12.12.21",
+    "rimraf": "~3.0.0",
     "ts-node": "~8.5.4",
     "tslint": "~5.20.1",
-    "typescript": "~3.5.0",
-    "rimraf": "~3.0.0"
+    "typescript": "~3.5.0"
   },
   "repository": {
     "type": "git",

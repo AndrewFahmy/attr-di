@@ -51,14 +51,20 @@ export class Component{
 
 
 ### &nbsp;**Variable Injection**
-&nbsp; This is a custom injection pattern. Think of it like a setter injection, you want to create an instance of a class under certain conditions.
+&nbsp; This below example creates an instance manually when needed.
 
 ```typescript
 import { injectorInstance } from 'attr-di';
 
-const component = injectorInstance.resolve<Model>(Component);
+const component = injectorInstance.getInstance<Component>(Component);
 ```
 
-The Generic declaration of this function is used to pass type parameters to a generic type when initializing a new version. Currently th method supports only one generic type.
+```typescript
+import { injectorInstance } from 'attr-di';
 
-The parameter passed to this method is th class type that you want to initialize.
+const component = injectorInstance.getInstanceWithParameter<Component, Model>(Component);
+```
+
+In first example, you pass the requested instance type as the function parameter, and the required return type as the generic parameter.
+
+As for the second example, you can pass an extra generic paramter which can be passed to generic instances like ``Component<T>``.
