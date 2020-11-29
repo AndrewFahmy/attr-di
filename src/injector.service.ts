@@ -4,7 +4,11 @@ import { InjectionTypes } from './injection.types.enum';
 import { IType } from './itype.interface';
 
 
-export class InjectorService extends Map implements IDisposable {
+export class InjectorService implements IDisposable {
+
+    private _map: Map<any, any>;
+
+    public constructor() { this._map = new Map(); }
 
     public resolve<T>(target: IType): any {
         const tokens = Reflect.getMetadata('design:paramtypes', target) || [];
@@ -16,7 +20,7 @@ export class InjectorService extends Map implements IDisposable {
         });
 
         if (injectionType === InjectionTypes.Singleton) {
-            const oldInstance = this.get(target);
+            const oldInstance = this._map.get(target);
 
             if (oldInstance) { return oldInstance; }
         }
@@ -24,19 +28,19 @@ export class InjectorService extends Map implements IDisposable {
         const newClassInstance = new target<T>(...parameters);
 
         if (injectionType === InjectionTypes.Singleton) {
-            this.set(target, newClassInstance);
+            this._map.set(target, newClassInstance);
         }
 
         return newClassInstance;
     }
 
     public dispose() {
-        for (const item in this.values()) {
+        for (const item in this._map.values()) {
             if (typeof item['dispose'] === 'function') {
                 item['dispose']();
             }
         }
 
-        this.clear();
+        this._map.clear();
     }
 }
